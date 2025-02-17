@@ -1,0 +1,37 @@
+digraph decision_tree {
+	fontname=Helvetica fontsize=20 rankdir=TB
+	Start [label="Initial Decision" fillcolor=white shape=box style=filled]
+	NoOffer [label="No Offer
+EMV: $0" fillcolor=red shape=box style=filled]
+	LowOffer [label="Low Offer $320M
+EMV: $339.2M" fillcolor=lightblue shape=box style=filled]
+	HighOffer [label="High Offer $400M
+EMV: $424M" fillcolor=green shape=box style=filled]
+	ILEN_Decision [label="ILEN’s Counteroffer" shape=diamond]
+	ILEN_10 [label="ILEN +10%" shape=box]
+	ILEN_20 [label="ILEN +20%" shape=box]
+	ILEN_30 [label="ILEN +30%" shape=box]
+	Polar_Decision [label="Polar’s Final Decision" shape=diamond]
+	Match [label="Match ILEN
+EMV $192M" shape=box]
+	Counter [label="Counter 10% Higher
+EMV $316.8M" shape=box]
+	AcceptMatch [label="DSOFT Accepts (40%)" shape=box]
+	RejectMatch [label="DSOFT Rejects (60%)" shape=box]
+	AcceptCounter [label="DSOFT Accepts (60%)" shape=box]
+	RejectCounter [label="DSOFT Rejects (40%)" shape=box]
+	Start -> NoOffer [color=red]
+	Start -> LowOffer [color=blue]
+	Start -> HighOffer [color=green penwidth=2]
+	HighOffer -> ILEN_Decision [color=green penwidth=2]
+	ILEN_Decision -> ILEN_10 [label="30%"]
+	ILEN_Decision -> ILEN_20 [label="40%"]
+	ILEN_Decision -> ILEN_30 [label="30%"]
+	ILEN_20 -> Polar_Decision [penwidth=2]
+	Polar_Decision -> Match [label="Match Offer"]
+	Polar_Decision -> Counter [label="Counter 10% Higher" color=green penwidth=2]
+	Match -> AcceptMatch
+	Match -> RejectMatch
+	Counter -> AcceptCounter
+	Counter -> RejectCounter
+}

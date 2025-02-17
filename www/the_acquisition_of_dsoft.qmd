@@ -1,0 +1,260 @@
+---
+title: "The Acquisition of DSOFT: Decision Analysis"
+date: "February 16, 2025"
+output: html_document
+---
+
+## Introduction
+In this project, we analyze the decision-making process for Polar Inc. as it considers acquiring DSOFT. By structuring the problem as a decision tree and calculating the Expected Monetary Value (EMV) of each option, we aim to identify the optimal bidding strategy.
+
+## Summary of the Problem
+Polar Inc. and ILEN are the two largest companies in the database software market, with 50% and 35% market shares, respectively. DSOFT, the third-largest company, holds 10% of the market. Polar and ILEN are competing to acquire DSOFT, which has a net worth of $300 million. DSOFT has refused any offers below this amount.
+
+Jacob Pratt, CEO of Polar, believes that acquiring DSOFT would increase Polar’s market share to 60% and enhance future earnings due to DSOFT’s promising new product. The probabilities of this product increasing DSOFT’s net worth are:
+
+- $300 million increase (50% probability)
+- $150 million increase (30% probability)
+- No increase (20% probability)
+
+### **Decision Options for Polar**
+1. Make a **high** offer of $400M.
+2. Make a **low** offer of $320M.
+3. Make **no offer** 
+
+### **ILEN’s Response if Polar Makes an Offer**
+If Polar makes an offer, ILEN may counter by increasing the offer by:
+
+- 10% with probability 0.30
+- 20% with probability 0.40
+- 30% with probability 0.30
+
+### **Polar’s Final Move if ILEN Counters**
+- Withdraw from the bidding
+- Match ILEN’s offer
+- Counter with 10% higher than ILEN’s offer
+  - If matching ILEN’s offer, DSOFT accepts with 40% probability.
+  - If 10% higher than ILEN, DSOFT accepts with 60% probability.
+
+### **Detailed Breakdown of EMV Calculation**
+For each offer, we calculate the EMV using the formula: **(Python)**
+
+\[ EMV = \sum (P_{ILEN} \times (P_{Accept} \times Offer + P_{Accept\_Higher} \times 1.1 \times Offer)) \]
+
+```{python}
+# Define offer values
+low_offer = 320
+high_offer = 400
+
+# Define probabilities
+p_ilen_10 = 0.30
+p_ilen_20 = 0.40
+p_ilen_30 = 0.30
+
+p_accept = 0.40  # Probability of acceptance at base offer
+p_accept_higher = 0.60  # Probability of acceptance if 10% higher
+
+# Function to calculate EMV for a given offer
+def calculate_emv(offer):
+    emv_10 = p_ilen_10 * ((p_accept * offer) + (p_accept_higher * 1.1 * offer))
+    emv_20 = p_ilen_20 * ((p_accept * offer) + (p_accept_higher * 1.1 * offer))
+    emv_30 = p_ilen_30 * ((p_accept * offer) + (p_accept_higher * 1.1 * offer))
+    
+    total_emv = emv_10 + emv_20 + emv_30
+    return total_emv
+
+# Calculate EMV for Low Offer ($320M)
+emv_low_offer = calculate_emv(low_offer)
+
+# Calculate EMV for High Offer ($400M)
+emv_high_offer = calculate_emv(high_offer)
+
+```
+
+```{python}
+# Print results
+print(f"Total EMV for Low Offer ($320M): {emv_low_offer}")
+print(f"Total EMV for High Offer ($400M): {emv_high_offer}")
+
+
+```
+
+
+- **No Offer:**
+  - EMV = 0 (since no revenue is generated)
+
+- **Low Offer ($320M):**
+  - Total EMV (Low Offer) = $339.2M
+
+- **High Offer ($400M):**
+  - Total EMV (High Offer) = $424M
+
+<br>
+
+### **Understanding the 1.1 Multiplier in EMV Calculation**
+When Polar decides to **increase its offer by 10%** over ILEN’s counteroffer, the new bid becomes **1.1 times** the original offer amount.
+
+For example:
+
+- If the initial offer is **$320M**, increasing by 10% results in **$352M**.
+- If the initial offer is **$400M**, increasing by 10% results in **$440M**.
+
+Since DSOFT has a **60% probability** of accepting a 10% higher bid, the expected monetary value calculation incorporates this possibility by multiplying the bid amount by 1.1.
+
+<br>
+
+### **EMV Calculation for Final Decision Nodes**
+To determine the best course of action, we calculate the EMV for each of the final decision nodes:
+
+In this case, the final decision nodes—"Match ILEN" and "Counter 10% Higher"—each have two possible outcomes:
+
+1. **DSOFT Accepts the Offer** (with a certain probability).
+2. **DSOFT Rejects the Offer** (resulting in zero monetary gain).
+
+We compute the EMV by multiplying the probability of DSOFT accepting the offer by the monetary value of the offer, then summing over all possible outcomes.
+
+
+#### **1. EMV for “Match ILEN”**
+
+If **Polar decides to match ILEN’s offer**, DSOFT has a **40% probability** of accepting the offer and a **60% probability** of rejecting it.
+
+Thus, the EMV formula is:
+
+```{python}
+# Define probabilities for ILEN's counteroffers
+p_ilen_10 = 0.30  # ILEN increases offer by 10%
+p_ilen_20 = 0.40  # ILEN increases offer by 20%
+p_ilen_30 = 0.30  # ILEN increases offer by 30%
+
+# Initial high offer by Polar
+initial_offer = 400  # in million dollars
+
+# Compute the expected ILEN counteroffer
+expected_ilen_offer = (p_ilen_10 * 1.1 + p_ilen_20 * 1.2 + p_ilen_30 * 1.3) * initial_offer
+
+# Define probabilities for acceptance
+p_accept_match = 0.40  # Probability that DSOFT accepts if Polar matches ILEN's offer
+p_reject_match = 1 - p_accept_match  # Probability that DSOFT rejects
+
+# Compute EMV for "Match ILEN"
+emv_match_ilen = (p_accept_match * expected_ilen_offer) + (p_reject_match * 0)
+
+```
+
+```{python}
+# Print results
+print(f"Expected ILEN Counteroffer: {expected_ilen_offer:.2f}M")
+print(f"EMV for 'Match ILEN': {emv_match_ilen:.2f}M")
+
+
+```
+
+<br>
+
+
+#### **2. EMV for “Counter 10% Higher”**
+
+If **Polar increases its offer by 10% above ILEN’s counter-offer**, DSOFT has a **60% probability** of accepting the offer and a **40% probability** of rejecting it.
+
+
+Thus, the EMV formula is:
+
+```{python}
+# Define probabilities for ILEN's counteroffers
+p_ilen_10 = 0.30  # ILEN increases offer by 10%
+p_ilen_20 = 0.40  # ILEN increases offer by 20%
+p_ilen_30 = 0.30  # ILEN increases offer by 30%
+
+# Initial high offer by Polar
+initial_offer = 400  # in million dollars
+
+# Compute the expected ILEN counteroffer
+expected_ilen_offer = (p_ilen_10 * 1.1 + p_ilen_20 * 1.2 + p_ilen_30 * 1.3) * initial_offer
+
+# Compute the offer when Polar counters 10% higher than ILEN's counteroffer
+expected_counter_offer = 1.1 * expected_ilen_offer
+
+# Define probabilities for acceptance
+p_accept_counter = 0.60  # Probability that DSOFT accepts if Polar counters 10% higher
+p_reject_counter = 1 - p_accept_counter  # Probability that DSOFT rejects
+
+# Compute EMV for "Counter 10% Higher"
+emv_counter_10_higher = (p_accept_counter * expected_counter_offer) + (p_reject_counter * 0)
+
+```
+
+```{python}
+print(f"Expected Offer When Countering 10% Higher: {expected_counter_offer:.2f}M")
+print(f"EMV for 'Counter 10% Higher': {emv_counter_10_higher:.2f}M")
+
+```
+
+
+
+
+Since **Counter 10% Higher ($316.8M) > Match ILEN ($192M)**, Polar should **counter ILEN’s offer by 10% higher** to maximize its expected monetary value.
+
+## **Conclusion**
+Based on the EMV calculations and the decision tree analysis, Polar should choose the strategy that maximizes its expected return. The analysis shows that **the High Offer ($400M) yields the highest EMV ($424M), and Countering ILEN’s offer by 10% higher ($316.8M) is the best final decision.** This structured decision-making process helps in objectively evaluating the risks and rewards associated with each bidding option.
+
+
+
+### **Decision Tree Visualization**
+```{r}
+library(DiagrammeR)
+
+grViz("
+digraph decision_tree {
+  rankdir=TB;
+  node [shape=box, style=filled, fontname=Helvetica, fontsize=20, fillcolor=white]
+
+  Start [label='Initial Decision', fontsize=30, fillcolor=lightblue]
+  NoOffer [label='No Offer\\nEMV: $0']
+  LowOffer [label='Low Offer $320M\\nEMV: $339.2M']
+  HighOffer [label='High Offer $400M\\nEMV: $424M', fillcolor=green]
+
+  ILEN_Decision [label='ILEN’s Counteroffer', shape=diamond, fillcolor=lightyellow]
+
+  ILEN_10 [label='ILEN +10%']
+  ILEN_20 [label='ILEN +20%']
+  ILEN_30 [label='ILEN +30%']
+
+  Polar_Decision [label='Polar’s Final Decision', shape=diamond, fillcolor=lightyellow]
+
+  Match [label='Match ILEN\\nEMV $192M']
+  Counter [label='Counter 10% Higher\\nEMV $316.8M', fillcolor=green]
+
+  AcceptMatch [label='DSOFT Accepts (40%)']
+  RejectMatch [label='DSOFT Rejects (60%)']
+  AcceptCounter [label='DSOFT Accepts (60%)']
+  RejectCounter [label='DSOFT Rejects (40%)']
+
+  Start -> NoOffer [color=red]
+  Start -> LowOffer [color=blue]
+  Start -> HighOffer [color=green, penwidth=2]
+
+  HighOffer -> ILEN_Decision [penwidth=2, color=green]
+
+  ILEN_Decision -> ILEN_10 [label='30%']
+  ILEN_Decision -> ILEN_20 [label='40%']
+  ILEN_Decision -> ILEN_30 [label='30%']
+
+  ILEN_20 -> Polar_Decision [penwidth=2]
+
+  Polar_Decision -> Match [label='Match Offer']
+  Polar_Decision -> Counter [label='Counter 10% Higher', penwidth=2, color=green]
+
+  Match -> AcceptMatch
+  Match -> RejectMatch
+
+  Counter -> AcceptCounter
+  Counter -> RejectCounter
+
+  
+  
+}")
+
+```
+
+
+
+

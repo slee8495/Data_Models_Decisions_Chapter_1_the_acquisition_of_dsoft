@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-02-16">
+
+<title>The Acquisition of DSOFT: Decision Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="the_acquisition_of_dsoft_files/libs/clipboard/clipboard.min.js"></script>
+<script src="the_acquisition_of_dsoft_files/libs/quarto-html/quarto.js"></script>
+<script src="the_acquisition_of_dsoft_files/libs/quarto-html/popper.min.js"></script>
+<script src="the_acquisition_of_dsoft_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="the_acquisition_of_dsoft_files/libs/quarto-html/anchor.min.js"></script>
+<link href="the_acquisition_of_dsoft_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="the_acquisition_of_dsoft_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="the_acquisition_of_dsoft_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="the_acquisition_of_dsoft_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="the_acquisition_of_dsoft_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="the_acquisition_of_dsoft_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="the_acquisition_of_dsoft_files/libs/viz-1.8.2/viz.js"></script>
+<link href="the_acquisition_of_dsoft_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="the_acquisition_of_dsoft_files/libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Acquisition of DSOFT: Decision Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 16, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this project, we analyze the decision-making process for Polar Inc.&nbsp;as it considers acquiring DSOFT. By structuring the problem as a decision tree and calculating the Expected Monetary Value (EMV) of each option, we aim to identify the optimal bidding strategy.</p>
+</section>
+<section id="summary-of-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-the-problem">Summary of the Problem</h2>
+<p>Polar Inc.&nbsp;and ILEN are the two largest companies in the database software market, with 50% and 35% market shares, respectively. DSOFT, the third-largest company, holds 10% of the market. Polar and ILEN are competing to acquire DSOFT, which has a net worth of $300 million. DSOFT has refused any offers below this amount.</p>
+<p>Jacob Pratt, CEO of Polar, believes that acquiring DSOFT would increase Polar’s market share to 60% and enhance future earnings due to DSOFT’s promising new product. The probabilities of this product increasing DSOFT’s net worth are:</p>
+<ul>
+<li>$300 million increase (50% probability)</li>
+<li>$150 million increase (30% probability)</li>
+<li>No increase (20% probability)</li>
+</ul>
+<section id="decision-options-for-polar" class="level3">
+<h3 class="anchored" data-anchor-id="decision-options-for-polar"><strong>Decision Options for Polar</strong></h3>
+<ol type="1">
+<li>Make a <strong>high</strong> offer of $400M.</li>
+<li>Make a <strong>low</strong> offer of $320M.</li>
+<li>Make <strong>no offer</strong></li>
+</ol>
+</section>
+<section id="ilens-response-if-polar-makes-an-offer" class="level3">
+<h3 class="anchored" data-anchor-id="ilens-response-if-polar-makes-an-offer"><strong>ILEN’s Response if Polar Makes an Offer</strong></h3>
+<p>If Polar makes an offer, ILEN may counter by increasing the offer by:</p>
+<ul>
+<li>10% with probability 0.30</li>
+<li>20% with probability 0.40</li>
+<li>30% with probability 0.30</li>
+</ul>
+</section>
+<section id="polars-final-move-if-ilen-counters" class="level3">
+<h3 class="anchored" data-anchor-id="polars-final-move-if-ilen-counters"><strong>Polar’s Final Move if ILEN Counters</strong></h3>
+<ul>
+<li>Withdraw from the bidding</li>
+<li>Match ILEN’s offer</li>
+<li>Counter with 10% higher than ILEN’s offer
+<ul>
+<li>If matching ILEN’s offer, DSOFT accepts with 40% probability.</li>
+<li>If 10% higher than ILEN, DSOFT accepts with 60% probability.</li>
+</ul></li>
+</ul>
+</section>
+<section id="detailed-breakdown-of-emv-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-breakdown-of-emv-calculation"><strong>Detailed Breakdown of EMV Calculation</strong></h3>
+<p>For each offer, we calculate the EMV using the formula: <strong>(Python)</strong></p>
+<p>[ EMV = (P_{ILEN} (P_{Accept} Offer + P_{Accept_Higher} Offer)) ]</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define offer values</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>low_offer <span class="op">=</span> <span class="dv">320</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>high_offer <span class="op">=</span> <span class="dv">400</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p_ilen_10 <span class="op">=</span> <span class="fl">0.30</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>p_ilen_20 <span class="op">=</span> <span class="fl">0.40</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p_ilen_30 <span class="op">=</span> <span class="fl">0.30</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>p_accept <span class="op">=</span> <span class="fl">0.40</span>  <span class="co"># Probability of acceptance at base offer</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>p_accept_higher <span class="op">=</span> <span class="fl">0.60</span>  <span class="co"># Probability of acceptance if 10% higher</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate EMV for a given offer</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_emv(offer):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    emv_10 <span class="op">=</span> p_ilen_10 <span class="op">*</span> ((p_accept <span class="op">*</span> offer) <span class="op">+</span> (p_accept_higher <span class="op">*</span> <span class="fl">1.1</span> <span class="op">*</span> offer))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    emv_20 <span class="op">=</span> p_ilen_20 <span class="op">*</span> ((p_accept <span class="op">*</span> offer) <span class="op">+</span> (p_accept_higher <span class="op">*</span> <span class="fl">1.1</span> <span class="op">*</span> offer))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    emv_30 <span class="op">=</span> p_ilen_30 <span class="op">*</span> ((p_accept <span class="op">*</span> offer) <span class="op">+</span> (p_accept_higher <span class="op">*</span> <span class="fl">1.1</span> <span class="op">*</span> offer))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    total_emv <span class="op">=</span> emv_10 <span class="op">+</span> emv_20 <span class="op">+</span> emv_30</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_emv</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate EMV for Low Offer ($320M)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>emv_low_offer <span class="op">=</span> calculate_emv(low_offer)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate EMV for High Offer ($400M)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>emv_high_offer <span class="op">=</span> calculate_emv(high_offer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total EMV for Low Offer ($320M): </span><span class="sc">{</span>emv_low_offer<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total EMV for Low Offer ($320M): 339.20000000000005</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total EMV for High Offer ($400M): </span><span class="sc">{</span>emv_high_offer<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total EMV for High Offer ($400M): 424.0</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>No Offer:</strong>
+<ul>
+<li>EMV = 0 (since no revenue is generated)</li>
+</ul></li>
+<li><strong>Low Offer ($320M):</strong>
+<ul>
+<li>Total EMV (Low Offer) = $339.2M</li>
+</ul></li>
+<li><strong>High Offer ($400M):</strong>
+<ul>
+<li>Total EMV (High Offer) = $424M</li>
+</ul></li>
+</ul>
+<p><br></p>
+</section>
+<section id="understanding-the-1.1-multiplier-in-emv-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-the-1.1-multiplier-in-emv-calculation"><strong>Understanding the 1.1 Multiplier in EMV Calculation</strong></h3>
+<p>When Polar decides to <strong>increase its offer by 10%</strong> over ILEN’s counteroffer, the new bid becomes <strong>1.1 times</strong> the original offer amount.</p>
+<p>For example:</p>
+<ul>
+<li>If the initial offer is <strong>$320M</strong>, increasing by 10% results in <strong>$352M</strong>.</li>
+<li>If the initial offer is <strong>$400M</strong>, increasing by 10% results in <strong>$440M</strong>.</li>
+</ul>
+<p>Since DSOFT has a <strong>60% probability</strong> of accepting a 10% higher bid, the expected monetary value calculation incorporates this possibility by multiplying the bid amount by 1.1.</p>
+<p><br></p>
+</section>
+<section id="emv-calculation-for-final-decision-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="emv-calculation-for-final-decision-nodes"><strong>EMV Calculation for Final Decision Nodes</strong></h3>
+<p>To determine the best course of action, we calculate the EMV for each of the final decision nodes:</p>
+<p>In this case, the final decision nodes—“Match ILEN” and “Counter 10% Higher”—each have two possible outcomes:</p>
+<ol type="1">
+<li><strong>DSOFT Accepts the Offer</strong> (with a certain probability).</li>
+<li><strong>DSOFT Rejects the Offer</strong> (resulting in zero monetary gain).</li>
+</ol>
+<p>We compute the EMV by multiplying the probability of DSOFT accepting the offer by the monetary value of the offer, then summing over all possible outcomes.</p>
+<section id="emv-for-match-ilen" class="level4">
+<h4 class="anchored" data-anchor-id="emv-for-match-ilen"><strong>1. EMV for “Match ILEN”</strong></h4>
+<p>If <strong>Polar decides to match ILEN’s offer</strong>, DSOFT has a <strong>40% probability</strong> of accepting the offer and a <strong>60% probability</strong> of rejecting it.</p>
+<p>Thus, the EMV formula is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities for ILEN's counteroffers</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p_ilen_10 <span class="op">=</span> <span class="fl">0.30</span>  <span class="co"># ILEN increases offer by 10%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>p_ilen_20 <span class="op">=</span> <span class="fl">0.40</span>  <span class="co"># ILEN increases offer by 20%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>p_ilen_30 <span class="op">=</span> <span class="fl">0.30</span>  <span class="co"># ILEN increases offer by 30%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial high offer by Polar</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>initial_offer <span class="op">=</span> <span class="dv">400</span>  <span class="co"># in million dollars</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the expected ILEN counteroffer</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>expected_ilen_offer <span class="op">=</span> (p_ilen_10 <span class="op">*</span> <span class="fl">1.1</span> <span class="op">+</span> p_ilen_20 <span class="op">*</span> <span class="fl">1.2</span> <span class="op">+</span> p_ilen_30 <span class="op">*</span> <span class="fl">1.3</span>) <span class="op">*</span> initial_offer</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities for acceptance</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>p_accept_match <span class="op">=</span> <span class="fl">0.40</span>  <span class="co"># Probability that DSOFT accepts if Polar matches ILEN's offer</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>p_reject_match <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_accept_match  <span class="co"># Probability that DSOFT rejects</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute EMV for "Match ILEN"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>emv_match_ilen <span class="op">=</span> (p_accept_match <span class="op">*</span> expected_ilen_offer) <span class="op">+</span> (p_reject_match <span class="op">*</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Expected ILEN Counteroffer: </span><span class="sc">{</span>expected_ilen_offer<span class="sc">:.2f}</span><span class="ss">M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected ILEN Counteroffer: 480.00M</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"EMV for 'Match ILEN': </span><span class="sc">{</span>emv_match_ilen<span class="sc">:.2f}</span><span class="ss">M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>EMV for 'Match ILEN': 192.00M</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="emv-for-counter-10-higher" class="level4">
+<h4 class="anchored" data-anchor-id="emv-for-counter-10-higher"><strong>2. EMV for “Counter 10% Higher”</strong></h4>
+<p>If <strong>Polar increases its offer by 10% above ILEN’s counter-offer</strong>, DSOFT has a <strong>60% probability</strong> of accepting the offer and a <strong>40% probability</strong> of rejecting it.</p>
+<p>Thus, the EMV formula is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities for ILEN's counteroffers</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p_ilen_10 <span class="op">=</span> <span class="fl">0.30</span>  <span class="co"># ILEN increases offer by 10%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>p_ilen_20 <span class="op">=</span> <span class="fl">0.40</span>  <span class="co"># ILEN increases offer by 20%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>p_ilen_30 <span class="op">=</span> <span class="fl">0.30</span>  <span class="co"># ILEN increases offer by 30%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial high offer by Polar</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>initial_offer <span class="op">=</span> <span class="dv">400</span>  <span class="co"># in million dollars</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the expected ILEN counteroffer</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>expected_ilen_offer <span class="op">=</span> (p_ilen_10 <span class="op">*</span> <span class="fl">1.1</span> <span class="op">+</span> p_ilen_20 <span class="op">*</span> <span class="fl">1.2</span> <span class="op">+</span> p_ilen_30 <span class="op">*</span> <span class="fl">1.3</span>) <span class="op">*</span> initial_offer</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the offer when Polar counters 10% higher than ILEN's counteroffer</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>expected_counter_offer <span class="op">=</span> <span class="fl">1.1</span> <span class="op">*</span> expected_ilen_offer</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities for acceptance</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>p_accept_counter <span class="op">=</span> <span class="fl">0.60</span>  <span class="co"># Probability that DSOFT accepts if Polar counters 10% higher</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>p_reject_counter <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_accept_counter  <span class="co"># Probability that DSOFT rejects</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute EMV for "Counter 10% Higher"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>emv_counter_10_higher <span class="op">=</span> (p_accept_counter <span class="op">*</span> expected_counter_offer) <span class="op">+</span> (p_reject_counter <span class="op">*</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Expected Offer When Countering 10% Higher: </span><span class="sc">{</span>expected_counter_offer<span class="sc">:.2f}</span><span class="ss">M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected Offer When Countering 10% Higher: 528.00M</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"EMV for 'Counter 10% Higher': </span><span class="sc">{</span>emv_counter_10_higher<span class="sc">:.2f}</span><span class="ss">M"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>EMV for 'Counter 10% Higher': 316.80M</code></pre>
+</div>
+</div>
+<p>Since <strong>Counter 10% Higher ($316.8M) &gt; Match ILEN ($192M)</strong>, Polar should <strong>counter ILEN’s offer by 10% higher</strong> to maximize its expected monetary value.</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
+<p>Based on the EMV calculations and the decision tree analysis, Polar should choose the strategy that maximizes its expected return. The analysis shows that <strong>the High Offer ($400M) yields the highest EMV ($424M), and Countering ILEN’s offer by 10% higher ($316.8M) is the best final decision.</strong> This structured decision-making process helps in objectively evaluating the risks and rewards associated with each bidding option.</p>
+<section id="decision-tree-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="decision-tree-visualization"><strong>Decision Tree Visualization</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DiagrammeR)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grViz</span>(<span class="st">"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">digraph decision_tree {</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="st">  rankdir=TB;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st">  node [shape=box, style=filled, fontname=Helvetica, fontsize=20, fillcolor=white]</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">  Start [label='Initial Decision', fontsize=30, fillcolor=lightblue]</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="st">  NoOffer [label='No Offer</span><span class="sc">\\</span><span class="st">nEMV: $0']</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">  LowOffer [label='Low Offer $320M</span><span class="sc">\\</span><span class="st">nEMV: $339.2M']</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">  HighOffer [label='High Offer $400M</span><span class="sc">\\</span><span class="st">nEMV: $424M', fillcolor=green]</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_Decision [label='ILEN’s Counteroffer', shape=diamond, fillcolor=lightyellow]</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_10 [label='ILEN +10%']</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_20 [label='ILEN +20%']</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_30 [label='ILEN +30%']</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">  Polar_Decision [label='Polar’s Final Decision', shape=diamond, fillcolor=lightyellow]</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="st">  Match [label='Match ILEN</span><span class="sc">\\</span><span class="st">nEMV $192M']</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="st">  Counter [label='Counter 10% Higher</span><span class="sc">\\</span><span class="st">nEMV $316.8M', fillcolor=green]</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="st">  AcceptMatch [label='DSOFT Accepts (40%)']</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="st">  RejectMatch [label='DSOFT Rejects (60%)']</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="st">  AcceptCounter [label='DSOFT Accepts (60%)']</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="st">  RejectCounter [label='DSOFT Rejects (40%)']</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="st">  Start -&gt; NoOffer [color=red]</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="st">  Start -&gt; LowOffer [color=blue]</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a><span class="st">  Start -&gt; HighOffer [color=green, penwidth=2]</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="st">  HighOffer -&gt; ILEN_Decision [penwidth=2, color=green]</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_Decision -&gt; ILEN_10 [label='30%']</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_Decision -&gt; ILEN_20 [label='40%']</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_Decision -&gt; ILEN_30 [label='30%']</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="st">  ILEN_20 -&gt; Polar_Decision [penwidth=2]</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a><span class="st">  Polar_Decision -&gt; Match [label='Match Offer']</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a><span class="st">  Polar_Decision -&gt; Counter [label='Counter 10% Higher', penwidth=2, color=green]</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="st">  Match -&gt; AcceptMatch</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="st">  Match -&gt; RejectMatch</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a><span class="st">  Counter -&gt; AcceptCounter</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a><span class="st">  Counter -&gt; RejectCounter</span></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a><span class="st">}"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b8f19ae4b7276466c90f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b8f19ae4b7276466c90f">{"x":{"diagram":"\ndigraph decision_tree {\n  rankdir=TB;\n  node [shape=box, style=filled, fontname=Helvetica, fontsize=20, fillcolor=white]\n\n  Start [label=\"Initial Decision\", fontsize=30, fillcolor=lightblue]\n  NoOffer [label=\"No Offer\\nEMV: $0\"]\n  LowOffer [label=\"Low Offer $320M\\nEMV: $339.2M\"]\n  HighOffer [label=\"High Offer $400M\\nEMV: $424M\", fillcolor=green]\n\n  ILEN_Decision [label=\"ILEN’s Counteroffer\", shape=diamond, fillcolor=lightyellow]\n\n  ILEN_10 [label=\"ILEN +10%\"]\n  ILEN_20 [label=\"ILEN +20%\"]\n  ILEN_30 [label=\"ILEN +30%\"]\n\n  Polar_Decision [label=\"Polar’s Final Decision\", shape=diamond, fillcolor=lightyellow]\n\n  Match [label=\"Match ILEN\\nEMV $192M\"]\n  Counter [label=\"Counter 10% Higher\\nEMV $316.8M\", fillcolor=green]\n\n  AcceptMatch [label=\"DSOFT Accepts (40%)\"]\n  RejectMatch [label=\"DSOFT Rejects (60%)\"]\n  AcceptCounter [label=\"DSOFT Accepts (60%)\"]\n  RejectCounter [label=\"DSOFT Rejects (40%)\"]\n\n  Start -> NoOffer [color=red]\n  Start -> LowOffer [color=blue]\n  Start -> HighOffer [color=green, penwidth=2]\n\n  HighOffer -> ILEN_Decision [penwidth=2, color=green]\n\n  ILEN_Decision -> ILEN_10 [label=\"30%\"]\n  ILEN_Decision -> ILEN_20 [label=\"40%\"]\n  ILEN_Decision -> ILEN_30 [label=\"30%\"]\n\n  ILEN_20 -> Polar_Decision [penwidth=2]\n\n  Polar_Decision -> Match [label=\"Match Offer\"]\n  Polar_Decision -> Counter [label=\"Counter 10% Higher\", penwidth=2, color=green]\n\n  Match -> AcceptMatch\n  Match -> RejectMatch\n\n  Counter -> AcceptCounter\n  Counter -> RejectCounter\n\n  \n  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
